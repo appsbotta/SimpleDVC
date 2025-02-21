@@ -29,3 +29,8 @@ dvc init
 ```bash
 dvc add data_given/winequality.csv
 ```
+
+8.
+```bash
+git add . && git commit -m "first commit"
+```
