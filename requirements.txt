@@ -2,3 +2,5 @@ drc
 drc[gdrive]
 scikit-learn
 pandas
+pytest
+tox
