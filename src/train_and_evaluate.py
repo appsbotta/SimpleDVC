@@ -35,6 +35,9 @@ def train_and_evaluate(config_path):
     l1_ratio = config["estimators"]["ElasticNet"]["params"]["l1_ration"]
 
     target = [config["base"]["target_col"]]
+
+    params_file = config["reports"]["params"]
+    scores_file = config["reports"]["scores"]
     
     train = pd.read_csv(train_data_path,sep=',')
     test = pd.read_csv(test_data_path,sep=',')
@@ -53,6 +56,21 @@ def train_and_evaluate(config_path):
     print(" RMSE: %s" % rmse )
     print(" MAE: %s" % mae )
     print(" R2: %s" % r2 )
+
+    with open(scores_file,"w") as f:
+        scores = {
+            "rmse": rmse,
+            "mae": mae,
+            "r2": r2
+        }
+        json.dump(scores,f,indent=4)
+
+    with open(params_file,"w") as f:
+        params = {
+            "alpha": alpha,
+            "l1_ratio": l1_ratio,
+        }
+        json.dump(params,f,indent=4)
 
     os.makedirs(model_dir,exist_ok=True)
     model_path = os.path.join(model_dir,"model.joblib")
