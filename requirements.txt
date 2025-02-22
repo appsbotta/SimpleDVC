@@ -1,3 +1,7 @@
+#loacl
+-e .
+
+#third party
 drc
 drc[gdrive]
 scikit-learn

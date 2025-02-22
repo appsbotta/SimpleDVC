@@ -35,3 +35,24 @@ dvc add data_given/winequality.csv
 git add . && git commit -m "first commit"
 git push origin main
 ```
+
+9.Tox
+```bash
+tox
+tox -r  #for rebuilding use this else only tox
+```
+
+10.pytest
+```bash
+pytest -v
+```
+
+11.setup command
+```bash
+pip install -e .
+```
+
+12.build your own package
+```bash
+python setup.py sdist bdist_wheel
+```
