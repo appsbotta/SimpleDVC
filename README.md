@@ -1,5 +1,5 @@
 
-# WrokFlow of the Project
+# WorkFlow of the Project
 
 1. Create env
 ```bash
