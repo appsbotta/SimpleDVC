@@ -71,3 +71,5 @@ python setup.py sdist bdist_wheel
 17. create the need webapp structure
 
 18. Create app.py 
+
+19. Add github action workflow
