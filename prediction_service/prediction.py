@@ -67,7 +67,7 @@ def form_response(dict_request):
         response = {"The_Expected_Range" : get_schema(),"response":str(e)}
         return response
 
-def api_responce(dict_request):
+def api_response(dict_request):
     try:
         if validate_input(dict_request):
             data = np.array([list(dict_request.values())])
