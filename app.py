@@ -16,16 +16,12 @@ template_dir = os.path.join(webapp_root,"templates")
 app = Flask(__name__,static_folder=static_dir,template_folder=template_dir)
 
 
-
-
-
-
 @app.route('/',methods=["GET","POST"])
 def index():
     if request.method == "POST":
         try:
             if request.form:
-                data_req = dict(request.form).values()
+                data_req = dict(request.form)
                 response = prediction.form_response(data_req)
                 return render_template("index.html",response=response)
             elif request.json:
