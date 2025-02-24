@@ -17,7 +17,7 @@ class NotInRange(Exception):
 class NotInCols(Exception):
     def __init__(self,message="Not in Columns"):
         self.message = message
-        super().__init__(self.message)\
+        super().__init__(self.message)
         
 def predict(data):
     config = read_params(params_path)
@@ -26,7 +26,7 @@ def predict(data):
     prediction = model.predict(data).tolist()[0]
 
     try:
-        if 3 <= prediction <= 8:
+        if 3.0 <= prediction and prediction <= 8.0:
             return prediction
         else:
             raise NotInRange

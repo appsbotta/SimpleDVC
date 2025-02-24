@@ -73,3 +73,10 @@ python setup.py sdist bdist_wheel
 18. Create app.py 
 
 19. Add github action workflow
+
+20. Create an articat folder
+
+21. MLflow server command
+```bash
+mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./artifacts --host 0.0.0.0 -p 1234
+```
